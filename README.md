@@ -39,6 +39,8 @@ all of them, so fix them here and copy them out.
   ("does not have 'workflow_dispatch' trigger"). `check.py` now parses every workflow.
 - Kaggle stores `.gz` files decompressed (`bus/10_10.json.gz` arrives as `bus/10_10.json`, at its full size), so the
   Kaggle copy's names and sha256 differ from `manifest.json`; say so in the card if the pipeline publishes `.gz`.
+- `python publish.py | tee …` reports `tee`'s exit status, so a publish the gate refused showed as a green run. The publish
+  step starts with `set -o pipefail` (found on hk-property, 2026-10-10).
 - Never put client or private data in a pipeline repo: they are public, and so is their history.
 
 Code: Apache-2.0. Data: under each source's own terms, listed in `sources.json`.
