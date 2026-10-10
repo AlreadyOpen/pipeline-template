@@ -11,6 +11,7 @@ import manifest, sources
 REPO = 'alreadyopen/REPLACE-ME'
 DATASET_FILES = ['index.json']                                         # e.g. the Parquet files
 BUCKET_FILES = ['index.json']                                          # e.g. the PMTiles, JSON tiles
+KAGGLE = ('helenkwok/REPLACE-ME', 'AlreadyOpen: REPLACE ME')            # mirrored by kaggle_mirror.py (title 6-50 chars)
 
 def main():
     o = lambda f: os.path.join(sources.OUT, f); idx = json.load(open(o('index.json')))
