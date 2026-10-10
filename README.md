@@ -37,6 +37,8 @@ all of them, so fix them here and copy them out.
 - Install DuckDB extensions once before any parallel work (`INSTALL` races on a fresh runner).
 - An unquoted `: ` inside a workflow `run:` line makes the file invalid YAML, and GitHub silently drops its triggers
   ("does not have 'workflow_dispatch' trigger"). `check.py` now parses every workflow.
+- Kaggle stores `.gz` files decompressed (`bus/10_10.json.gz` arrives as `bus/10_10.json`, at its full size), so the
+  Kaggle copy's names and sha256 differ from `manifest.json`; say so in the card if the pipeline publishes `.gz`.
 - Never put client or private data in a pipeline repo: they are public, and so is their history.
 
 Code: Apache-2.0. Data: under each source's own terms, listed in `sources.json`.
